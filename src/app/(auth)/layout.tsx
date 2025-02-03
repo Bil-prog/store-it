@@ -9,8 +9,8 @@ const layout = ({children} : { children: React.ReactNode}) => {
                 <Image 
                 src="/assets/icons/logo-full.svg"
                 alt='logo'
-                width={224}
-                height={82}
+                width={200}
+                height={54}
                 className='h-auto'
                 />
                 <div className='space-y-5 text-white'>
