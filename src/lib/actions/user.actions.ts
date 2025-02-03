@@ -129,7 +129,7 @@ const getUserByEmail = async (email: string) => {
   export const signInUser = async ({ email }: { email: string }) => {
     try {
       const existingUser = await getUserByEmail(email);
-  
+      
       // User exists, send OTP
       if (existingUser) {
         await sendEmailOTP({ email });
