@@ -4,8 +4,6 @@ import Image from "next/image";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
@@ -20,7 +18,7 @@ import { Button } from "./ui/button";
 import { signOutUser } from "@/lib/actions/user.actions";
 
 interface Props {
-  ownerId: string;
+  $id: string;
   accountId: string;
   fullName: string;
   avatar: string;
@@ -28,7 +26,7 @@ interface Props {
 }
 
 const MobileNavigation = ({
-  ownerId,
+  $id: ownerId,
   accountId,
   fullName,
   avatar,
@@ -56,7 +54,6 @@ const MobileNavigation = ({
           />
         </SheetTrigger>
         <SheetContent className="shad-sheet h-screen px-3">
-          <SheetHeader>
             <SheetTitle>
               <div className="header-user">
                 <Image
@@ -101,7 +98,7 @@ const MobileNavigation = ({
             </nav>
             <Separator className="my-5 bg-light-200/20" />
             <div className="flex flex-col justify-between gap-5 pb-5">
-              <FileUploader />
+              <FileUploader ownerId={ownerId} accountId={accountId}/>
               <Button type="submit" className="mobile-sign-out-button" onClick={async() => await signOutUser}>
                 <Image
                   src="/assets/icons/logout.svg"
@@ -112,7 +109,6 @@ const MobileNavigation = ({
                 <p>Logout</p>
               </Button>
             </div>
-          </SheetHeader>
         </SheetContent>
       </Sheet>
     </header>
