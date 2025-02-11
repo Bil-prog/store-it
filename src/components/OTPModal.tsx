@@ -53,7 +53,7 @@ const OTPModal = ({accountId, email} : {accountId: string, email: string}) => {
           <DialogTitle className="h2 text-center">Enter your OTP
           </DialogTitle>
           <DialogDescription className="subtitle-2 text-center text-light-100">
-            We've sent a code to <span className="pl-1 text-brand">{email}</span>
+            We&apos;ve sent a code to <span className="pl-1 text-brand">{email}</span>
           </DialogDescription>
         </DialogHeader>
         <InputOTP maxLength={6} value={password} onChange={setPassword}>
@@ -83,7 +83,7 @@ const OTPModal = ({accountId, email} : {accountId: string, email: string}) => {
                 )}
             </div>
             <br />
-            <div className="text-center text-sm">Didn't get a code?
+            <div className="text-center text-sm">Didn&apos;t get a code?
                 <Button type="button" variant="link" className="pl-1 text-brand" onClick={handleResendOTP}>Click to Resend</Button>
             </div>
         </div>
